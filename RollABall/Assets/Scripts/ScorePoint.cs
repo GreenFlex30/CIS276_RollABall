@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScorePoint : MonoBehaviour
 {
-    private void onTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {

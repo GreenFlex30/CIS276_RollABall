@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 moveInput;
     private Rigidbody rb;
     private PlayerCamera playerCam;
-    [SerializeField] private float speed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float speed = 5f;
+    [SerializeField] private float jumpForce = 3f;
 
     private void Awake()
     {
@@ -36,10 +36,11 @@ public class PlayerMovement : MonoBehaviour
     private void MovePlayer()
     {
         transform.forward = playerCam.transform.forward;
+
         Vector3 directionX = transform.right.normalized * moveInput.x;
         Vector3 directionZ = transform.forward.normalized * moveInput.z;
 
-        rb.velocity = new Vector3(0, rb.velocity.y,0) + (directionX + directionZ);
+        rb.velocity = new Vector3(0, rb.velocity.y, 0) + (directionX + directionZ);
     }
 }
 
