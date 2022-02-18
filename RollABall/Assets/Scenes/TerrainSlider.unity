@@ -600,6 +600,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
+  canPlace: 1
 --- !u!4 &2066340397
 Transform:
   m_ObjectHideFlags: 0

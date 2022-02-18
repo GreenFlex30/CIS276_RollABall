@@ -8,6 +8,7 @@ public class ObjectPlacementManager : MonoBehaviour
     // Assigned in Inspector
     public Camera cam;
     public LayerMask mask;
+    // boolean for placing obj
     public bool canPlace = true;
 
     
@@ -31,15 +32,19 @@ public class ObjectPlacementManager : MonoBehaviour
 
         if(Input.GetButtonDown("Fire1") && canPlace == true)
         {
+            // Duplicate of cube is made
             Transform dupe;
             dupe = Instantiate(placeableObject, transform);
-            //Destroy(placeableObject);
+
+            // disables ability to place cube and disables render for cube
             canPlace = false;
+            placeableObject.GetComponentInChildren<Renderer>().enabled = false;
         }
         if(Input.GetButtonDown("Fire2"))
         {
-            //placeableObject = Instantiate(placeableObject);
+            // re-enables render and ability to place cube
             canPlace = true;
+            placeableObject.GetComponentInChildren<Renderer>().enabled = true;
         }
     }
 }
