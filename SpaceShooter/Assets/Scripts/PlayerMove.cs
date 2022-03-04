@@ -32,9 +32,9 @@ public class PlayerMove : MonoBehaviour
     private void MovePlayer()
     {
         // ensures movement for x and y directions
-        Vector2 directionX = transform.right.normalized * moveInput.x;
-        Vector2 directionY = transform.forward.normalized * moveInput.y;
+        Vector2 directionX = transform.right.normalized * moveInput.x * speed;
+        Vector2 directionY = transform.forward.normalized * moveInput.y * speed;
 
-        rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y) + (directionX + directionY);
+        rb.velocity = new Vector2(0, 0) + (directionX + directionY);
     }
 }

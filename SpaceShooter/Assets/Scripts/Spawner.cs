@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Control : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
+
+    // range from coords: -10.5,7.75 to 10.5,7.75
+
     // Start is called before the first frame update
     void Start()
     {
