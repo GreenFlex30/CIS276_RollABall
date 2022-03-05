@@ -6,7 +6,7 @@ public class Asteroid : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        // checks if object collided is a projectile
+        // checks if object collided is a laser, Mine, or Player
         if (other.gameObject.tag == "Laser" || other.gameObject.tag == "Mine" || other.gameObject.tag == "Player")
         {
             Destroy(gameObject);

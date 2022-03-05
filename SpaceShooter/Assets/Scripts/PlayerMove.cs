@@ -35,6 +35,7 @@ public class PlayerMove : MonoBehaviour
         Vector2 directionX = transform.right.normalized * moveInput.x * speed;
         Vector2 directionY = transform.forward.normalized * moveInput.y * speed;
 
+        // default speed gets set here
         rb.velocity = new Vector2(0, 0) + (directionX + directionY);
     }
 }
