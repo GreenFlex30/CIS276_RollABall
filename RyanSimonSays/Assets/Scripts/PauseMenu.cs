@@ -9,15 +9,17 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenu;
     public Button resumeButton;
     public Button menuButton;
+    public Button giveUpButton;
     public string sceneName;
     public static bool gameStopped = false;
 
     // actions done at start
     private void Start()
     {
-        // listeners for both buttons
+        // listeners for the three buttons
         resumeButton.onClick.AddListener(Resume);
         menuButton.onClick.AddListener(LoadMainMenu);
+        giveUpButton.onClick.AddListener(GiveUp);
     }
 
     // to go to the main menu scene
@@ -58,5 +60,11 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         gameStopped = true;
+    }
+
+    // the give up option signal is sent to the manager (to bypass static restrictions)
+    public static void GiveUp()
+    {
+        SimonSaysManager.giveUp();
     }
 }
