@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-	//Decide which to use - character controller
+	// Using a character controller
 
 	// Variables
-	[SerializeField] private float speed = 5f;
+	[SerializeField] public float speed = 5f;
 	private float gravityComponent;
 	[SerializeField] private float jumpHeight = 2f;
 	[SerializeField] private float gravity = 8f;
@@ -30,16 +30,13 @@ public class Movement : MonoBehaviour
 		animator = GetComponent<Animator>();
 	}
 
-	// NOTE: only for pwr, NOT forcing to jump. method needs to change
 	public void Jump(float heightToJump)
 	{
 		if (characterController.isGrounded)
 		{
-			animator.SetTrigger("Jump");
+			animator.SetTrigger("jump");
 			gravityComponent = Mathf.Sqrt(-2f * -gravity * heightToJump);
 		}
-		//animator.SetTrigger("jump");
-		//gravityComponent = Mathf.Sqrt(-2f * -gravity * heightToJump);
 	}
 
 	private void MovePlayer()
@@ -56,23 +53,16 @@ public class Movement : MonoBehaviour
 		if (direction != Vector3.zero)
 		{
 			transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
-			animator.SetFloat("MoveSpeed", 1);
+			animator.SetFloat("movement", 1);
 		}
 		else
 		{
-			animator.SetFloat("MoveSpeed", 0);
+			animator.SetFloat("movement", 0);
 		}
 	}
 
 	private void CalculateAnimations()
 	{
-		/*
-		function moved to Jump() method
-		if(PlayerInput.JumpInput && characterController.isGrounded)
-		{
-			animator.SetTrigger("jump");
-		}
-		*/
 		animator.SetBool("airborne", !characterController.isGrounded);
 	}
 
@@ -88,15 +78,29 @@ public class Movement : MonoBehaviour
 
 		else if (playerInput.JumpInput)
 		{
-			//gravityComponent = Mathf.Sqrt(-2f * -gravity * jumpHeight);
 			Jump(jumpHeight);
 		}
 	}
+
+	// doubles player's speed
+	public float speedBoost()
+    {
+		speed *= 2;
+		return speed;
+    }
+
+	// doubles player's jump height
+	public float jumpBoost()
+    {
+		jumpHeight *= 2;
+		return jumpHeight;
+    }
 
 	// Update is called once per frame
 	void Update()
 	{
 		CalculateVerticalSpeed();
+		CalculateAnimations();
 		MovePlayer();
 	}
 }
