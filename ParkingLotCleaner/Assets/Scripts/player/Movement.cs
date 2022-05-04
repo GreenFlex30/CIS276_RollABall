@@ -23,6 +23,11 @@ public class Movement : MonoBehaviour
 	// Set in Inspector
 	[SerializeField] private Transform cameraTransform;
 
+	public AudioSource jumpSound;
+	public AudioSource runSound;
+	public AudioSource jBoostSound;
+	public AudioSource sBoostSound;
+
 	private void Awake()
 	{
 		playerInput = GetComponent<PlayerInput>();
@@ -34,6 +39,7 @@ public class Movement : MonoBehaviour
 	{
 		if (characterController.isGrounded)
 		{
+			jumpSound.Play();
 			animator.SetTrigger("jump");
 			gravityComponent = Mathf.Sqrt(-2f * -gravity * heightToJump);
 		}
@@ -52,6 +58,7 @@ public class Movement : MonoBehaviour
 
 		if (direction != Vector3.zero)
 		{
+			//runSound.Play();
 			transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
 			animator.SetFloat("movement", 1);
 		}
@@ -85,6 +92,7 @@ public class Movement : MonoBehaviour
 	// doubles player's speed
 	public float speedBoost()
     {
+		sBoostSound.Play();
 		speed *= 2;
 		return speed;
     }
@@ -92,6 +100,7 @@ public class Movement : MonoBehaviour
 	// doubles player's jump height
 	public float jumpBoost()
     {
+		jBoostSound.Play();
 		jumpHeight *= 2;
 		return jumpHeight;
     }

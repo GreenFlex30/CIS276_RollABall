@@ -32,7 +32,8 @@ public class MainTimer : MonoBehaviour
         if(current <= 0)
         {
             current = 0;
-            gameOverTimer();
+            StartCoroutine(gameOverTimer());
+            //gameOver();
         }
     }
 

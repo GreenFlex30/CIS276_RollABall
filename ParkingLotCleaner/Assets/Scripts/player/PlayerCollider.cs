@@ -27,7 +27,7 @@ public class PlayerCollider : MonoBehaviour
         {
             movement.speedBoost();
             Destroy(other.gameObject);
-            StartCoroutine(randomManagers.spawnTimerSpeed());
+            //StartCoroutine(randomManagers.spawnTimerSpeed());
         }
         // jumpBoost gives player temporary jumpheight+, destroys object,
         // and calls timer
@@ -35,7 +35,7 @@ public class PlayerCollider : MonoBehaviour
         {
             movement.jumpBoost();
             Destroy(other.gameObject);
-            StartCoroutine(randomManagers.spawnTimerJump());
+            //StartCoroutine(randomManagers.spawnTimerJump());
         }
         // Mess decreases the amount of dirt spots left and destroys object
         else if (other.gameObject.tag == "Mess")
