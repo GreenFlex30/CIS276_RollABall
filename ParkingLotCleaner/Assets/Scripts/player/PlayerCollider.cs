@@ -47,12 +47,13 @@ public class PlayerCollider : MonoBehaviour
         // When there's no dirt left, player touches van to win
         else if (other.gameObject.tag == "UtilityVan")
         {
-            Debug.Log("Let's see...");
             // player gets win message and gets sent to main menu
             if (Mess.dirtLeft == 0)
             {
                 //mainGameManager.win();
-                //Debug.Log("You Win!");
+                //mess.totalDirt.text = "You Win!";
+                Time.timeScale = 0f;
+                GameSceneManager.Instance.LoadScene("MainMenu");
             }
         }
     }

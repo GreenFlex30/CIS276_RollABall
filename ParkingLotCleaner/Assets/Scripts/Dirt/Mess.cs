@@ -8,7 +8,7 @@ public class Mess : MonoBehaviour
     // variables set
     public Text totalDirt;
     public static int dirtLeft = 10;
-    public int finalDirt = 1;
+    //public int finalDirt = 1;
     public bool isDone = false;
 
     // when called, the amount of dirt spots left will decrease
@@ -29,6 +29,7 @@ public class Mess : MonoBehaviour
         // displays the amount of dirtspots left on text box
         totalDirt.text = dirtLeft + " messes left!";
 
+        // tell the player to go to the van
         if(dirtLeft == 0)
         {
             isDone = true;

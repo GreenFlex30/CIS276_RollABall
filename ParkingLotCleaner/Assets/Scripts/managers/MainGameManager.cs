@@ -29,10 +29,4 @@ public class MainGameManager : MonoBehaviour
         // wait a couple of seconds
         // method to start timer
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        timer();
-    }
 }
