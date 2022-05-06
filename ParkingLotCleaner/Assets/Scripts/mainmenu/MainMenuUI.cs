@@ -30,7 +30,7 @@ public class MainMenuUI : MonoBehaviour
     {
         Mess.dirtLeft = 10;
         //dirtSpawn.loadDirt();
-        GameSceneManager.Instance.LoadScene("testlevel");
+        GameSceneManager.Instance.LoadScene("Mall");
     }
 
     // action to start the mall level
