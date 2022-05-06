@@ -14590,6 +14590,30 @@ PrefabInstance:
       propertyPath: startTime
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 1990396750870285782, guid: 41718ebfd86ee0d4fb352cf34c776224, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990396750870285782, guid: 41718ebfd86ee0d4fb352cf34c776224, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990396750870285782, guid: 41718ebfd86ee0d4fb352cf34c776224, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990396751417366314, guid: 41718ebfd86ee0d4fb352cf34c776224, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990396751417366314, guid: 41718ebfd86ee0d4fb352cf34c776224, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9499881
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990396751417366314, guid: 41718ebfd86ee0d4fb352cf34c776224, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1990396751795437851, guid: 41718ebfd86ee0d4fb352cf34c776224, type: 3}
       propertyPath: m_Name
       value: UI
