@@ -16,12 +16,14 @@ public class PlayerInput : MonoBehaviour
 	// Variables
 	public bool inputEnabled;
 
+	// button inputs
 	[field: SerializeField] public Vector3 MoveInput { get; private set; }
 	[field: SerializeField] public bool JumpInput { get; private set; }
 	[field: SerializeField] public Vector3 CameraMoveInput { get; private set; }
 	//added
 	[field: SerializeField] public static bool CleanInput { get; private set; }
 
+	// sets the given inputs
 	private void SetInputs()
 	{
 		MoveInput = new Vector3(Input.GetAxis(HORIZONTAL_INPUT), 0, Input.GetAxis(VERTICAL_INPUT));
@@ -31,6 +33,7 @@ public class PlayerInput : MonoBehaviour
 		CleanInput = Input.GetButtonDown(CLEAN_INPUT);
 	}
 
+	// resets inputs when called
 	private void ResetInputs()
 	{
 		MoveInput = Vector3.zero;
@@ -40,11 +43,13 @@ public class PlayerInput : MonoBehaviour
 		CleanInput = false;
 	}
 
+	// player is given control
 	private void Start()
 	{
 		inputEnabled = true;
 	}
 
+	// input setter
 	private void Update()
 	{
 		if (inputEnabled)

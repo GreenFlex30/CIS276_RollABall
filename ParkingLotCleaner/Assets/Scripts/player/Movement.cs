@@ -35,6 +35,7 @@ public class Movement : MonoBehaviour
 		animator = GetComponent<Animator>();
 	}
 
+	// player will jump to the maximum height
 	public void Jump(float heightToJump)
 	{
 		if (characterController.isGrounded)
@@ -47,6 +48,7 @@ public class Movement : MonoBehaviour
 
 	private void MovePlayer()
 	{
+		// movement physics set
 		float moveInputMagnitude = playerInput.MoveInput.magnitude * speed;
 		Vector3 direction = playerInput.MoveInput.normalized;
 		direction = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * direction;
@@ -56,6 +58,7 @@ public class Movement : MonoBehaviour
 
 		characterController.Move(finalVelocity * Time.deltaTime);
 
+		// for movement
 		if (direction != Vector3.zero)
 		{
 			//runSound.Play();
@@ -64,15 +67,18 @@ public class Movement : MonoBehaviour
 		}
 		else
 		{
+			// idle
 			animator.SetFloat("movement", 0);
 		}
 	}
 
+	// for when the player is in air
 	private void CalculateAnimations()
 	{
 		animator.SetBool("airborne", !characterController.isGrounded);
 	}
 
+	// for vertical movement
 	private void CalculateVerticalSpeed()
 	{
 		if (!characterController.isGrounded)

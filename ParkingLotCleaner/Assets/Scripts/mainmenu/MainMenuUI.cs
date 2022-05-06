@@ -11,7 +11,7 @@ public class MainMenuUI : MonoBehaviour
     public Button exitButton;
 
     public DirtSpawn dirtSpawn;
-
+    // gets the Dirtspawn script
     public void Awake()
     {
         dirtSpawn = GetComponent<DirtSpawn>();
@@ -33,7 +33,7 @@ public class MainMenuUI : MonoBehaviour
         GameSceneManager.Instance.LoadScene("Mall");
     }
 
-    // action to start the mall level
+    // action to start the Multilevel parking level
     public void LoadLevel2()
     {
         Mess.dirtLeft = 10;

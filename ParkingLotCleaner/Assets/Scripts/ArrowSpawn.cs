@@ -8,12 +8,14 @@ public class ArrowSpawn : MonoBehaviour
 
     private void Update()
     {
+        // checks if all dirtspots are gone
         if (Mess.dirtLeft == 0)
         {
             StartCoroutine(spawnArrowTimer());
         }
     }
 
+    // spawns an arrow in the position of the spawner when called
     public void spawnArrow()
     {
         if (Mess.dirtLeft == 0)
@@ -24,6 +26,7 @@ public class ArrowSpawn : MonoBehaviour
         }
     }
 
+    // timer for calling an arrow
     IEnumerator spawnArrowTimer()
     {
         while (true)
